@@ -30,29 +30,29 @@ import com.ponysdk.core.ui.basic.IsPWidget;
  */
 public interface RowAction<V> {
 
-	/**
-	 * @param value the value associated to the row
-	 * @param index the index of the row in the table
-	 * @return {@code true} if the action is to be applied on the row,
-	 *         {@code false} otherwise
-	 */
-	boolean testRow(V value, int index);
+    /**
+     * @param value the value associated to the row
+     * @param index the index of the row in the table
+     * @return {@code true} if the action is to be applied on the row,
+     *         {@code false} otherwise
+     */
+    boolean testRow(V value, int index);
 
-	/**
-	 * Applies an action on the {@code row} widget.<br/>
-	 * <b>MUST NOT modify the dimensions (width or height) of the row since they
-	 * can be dynamically calculated.</b>
-	 */
-	void apply(IsPWidget row);
+    /**
+     * Applies an action on the {@code row} widget.<br/>
+     * <b>MUST NOT modify the dimensions (width or height) of the row since they
+     * can be dynamically calculated.</b>
+     */
+    void apply(IsPWidget row);
 
-	/**
-	 * Reverts the changes applied by {@link #apply(IsPWidget)} on the
-	 * {@code row} widget.<br/>
-	 */
-	void cancel(IsPWidget row);
+    /**
+     * Reverts the changes applied by {@link #apply(IsPWidget)} on the
+     * {@code row} widget.<br/>
+     */
+    void cancel(IsPWidget row);
 
-	/**
-	 * Returns a boolean that determines if an action is applied for a row
-	 */
-	boolean isActionApplied(final IsPWidget row);
+    /**
+     * Returns a boolean that determines if an action is applied for a row
+     */
+    boolean isActionApplied(final IsPWidget row);
 }

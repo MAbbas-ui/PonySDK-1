@@ -33,11 +33,11 @@ import java.util.List;
 
 public class ViewLiveData<V> {
 
-	public int absoluteRowCount;
-	public List<DefaultRow<V>> liveData;
+    public int absoluteRowCount;
+    public List<DefaultRow<V>> liveData;
 
-	public ViewLiveData(final int absoluteRowCount, final Collection<DefaultRow<V>> liveData) {
-		this.absoluteRowCount = absoluteRowCount;
-		this.liveData = new ArrayList<>(liveData);
-	}
+    public ViewLiveData(final int absoluteRowCount, final Collection<DefaultRow<V>> liveData) {
+        this.absoluteRowCount = absoluteRowCount;
+        this.liveData = new ArrayList<>(liveData);
+    }
 }

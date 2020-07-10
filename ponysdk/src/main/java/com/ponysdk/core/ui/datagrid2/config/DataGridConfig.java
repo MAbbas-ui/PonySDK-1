@@ -36,94 +36,94 @@ import com.ponysdk.core.ui.datagrid2.view.DataGridView;
  */
 public interface DataGridConfig<V> {
 
-	public abstract List<Sort<V>> getSorts();
+    public abstract List<Sort<V>> getSorts();
 
-	public abstract List<ColumnConfig<V>> getColumnConfigs();
+    public abstract List<ColumnConfig<V>> getColumnConfigs();
 
-	public abstract Map<String, Object> getReadOnlyCustomValues();
+    public abstract Map<String, Object> getReadOnlyCustomValues();
 
-	public abstract <T> T getCustomValue(String key);
+    public abstract <T> T getCustomValue(String key);
 
-	public abstract void setCustomValue(String key, Object value);
+    public abstract void setCustomValue(String key, Object value);
 
-	public static class ColumnConfig<V> {
+    public static class ColumnConfig<V> {
 
-		private final String columnId;
-		private final State state;
-		private final int width;
+        private final String columnId;
+        private final State state;
+        private final int width;
 
-		public ColumnConfig(final String columnId, final State state, final int width) {
-			super();
-			this.columnId = columnId;
-			this.state = state;
-			this.width = width;
-		}
+        public ColumnConfig(final String columnId, final State state, final int width) {
+            super();
+            this.columnId = columnId;
+            this.state = state;
+            this.width = width;
+        }
 
-		public ColumnConfig(final ColumnDefinition<V> column) {
-			this(column.getId(), column.getDefaultState(), column.getDefaultWidth());
-		}
+        public ColumnConfig(final ColumnDefinition<V> column) {
+            this(column.getId(), column.getDefaultState(), column.getDefaultWidth());
+        }
 
-		public int getWidth() {
-			return width;
-		}
+        public int getWidth() {
+            return width;
+        }
 
-		public String getColumnId() {
-			return columnId;
-		}
+        public String getColumnId() {
+            return columnId;
+        }
 
-		public State getState() {
-			return state;
-		}
+        public State getState() {
+            return state;
+        }
 
-	}
+    }
 
-	public static class Sort<V> {
+    public static class Sort<V> {
 
-		private Sort() {
+        private Sort() {
 
-		}
+        }
 
-	}
+    }
 
-	public final static class ColumnSort<V> extends Sort<V> {
+    public final static class ColumnSort<V> extends Sort<V> {
 
-		private final String columnId;
-		private final boolean asc;
+        private final String columnId;
+        private final boolean asc;
 
-		public ColumnSort(final String columnId, final boolean asc) {
-			super();
-			this.columnId = columnId;
-			this.asc = asc;
-		}
+        public ColumnSort(final String columnId, final boolean asc) {
+            super();
+            this.columnId = columnId;
+            this.asc = asc;
+        }
 
-		public String getColumnId() {
-			return columnId;
-		}
+        public String getColumnId() {
+            return columnId;
+        }
 
-		public boolean isAsc() {
-			return asc;
-		}
+        public boolean isAsc() {
+            return asc;
+        }
 
-	}
+    }
 
-	public final static class GeneralSort<V> extends Sort<V> {
+    public final static class GeneralSort<V> extends Sort<V> {
 
-		private final Object key;
-		private final Comparator<V> comparator;
+        private final Object key;
+        private final Comparator<V> comparator;
 
-		public GeneralSort(final Object key, final Comparator<V> comparator) {
-			super();
-			this.key = key;
-			this.comparator = comparator;
-		}
+        public GeneralSort(final Object key, final Comparator<V> comparator) {
+            super();
+            this.key = key;
+            this.comparator = comparator;
+        }
 
-		public Object getKey() {
-			return key;
-		}
+        public Object getKey() {
+            return key;
+        }
 
-		public Comparator<V> getComparator() {
-			return comparator;
-		}
+        public Comparator<V> getComparator() {
+            return comparator;
+        }
 
-	}
+    }
 }

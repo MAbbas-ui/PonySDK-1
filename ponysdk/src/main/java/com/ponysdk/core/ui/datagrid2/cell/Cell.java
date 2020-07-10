@@ -37,40 +37,40 @@ import com.ponysdk.core.ui.datagrid2.column.ColumnDefinition;
  */
 public interface Cell<V> extends IsPWidget {
 
-	/**
-	 * Must always return the same instance and cannot be {@code null} or the
-	 * same as the main widget.
-	 *
-	 * @return a widget that will replace the main widget when the value for
-	 *         this cell is not available
-	 */
-	PWidget asPendingWidget();
+    /**
+     * Must always return the same instance and cannot be {@code null} or the
+     * same as the main widget.
+     *
+     * @return a widget that will replace the main widget when the value for
+     *         this cell is not available
+     */
+    PWidget asPendingWidget();
 
-	/**
-	 * Renders the value in the main widget.
-	 *
-	 * @param data            the value to be rendered
-	 * @param renderingHelper the intermediate object supplied in
-	 *                        {@link ColumnDefinition#getRenderingHelper(Object)}
-	 */
-	void render(V data, Object renderingHelper);
+    /**
+     * Renders the value in the main widget.
+     *
+     * @param data the value to be rendered
+     * @param renderingHelper the intermediate object supplied in
+     *            {@link ColumnDefinition#getRenderingHelper(Object)}
+     */
+    void render(V data, Object renderingHelper);
 
-	/**
-	 * Sets a {@link CellController} that can be used to make cell/row related
-	 * actions. It will be set as soon as the
-	 * {@link ColumnDefinition#createCell()} is called.
-	 *
-	 * @param cellController
-	 */
-	void setController(CellController<V> cellController);
+    /**
+     * Sets a {@link CellController} that can be used to make cell/row related
+     * actions. It will be set as soon as the
+     * {@link ColumnDefinition#createCell()} is called.
+     *
+     * @param cellController
+     */
+    void setController(CellController<V> cellController);
 
-	/**
-	 * Called when the row that this cell belongs to is selected
-	 */
-	void select();
+    /**
+     * Called when the row that this cell belongs to is selected
+     */
+    void select();
 
-	/**
-	 * Called when the row that this cell belongs to is unselected
-	 */
-	void unselect();
+    /**
+     * Called when the row that this cell belongs to is unselected
+     */
+    void unselect();
 }
